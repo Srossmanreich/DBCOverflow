@@ -5,6 +5,7 @@ class User < ActiveRecord::Base
   include BCrypt
 
   has_many :comments, as: :interactive
+  has_many :questions
 
   validates :last_name, :first_name, :user_name, :email, presence: true
 
