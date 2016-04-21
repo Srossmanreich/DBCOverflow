@@ -7,7 +7,7 @@ class User < ActiveRecord::Base
   has_many :comments, as: :interactive
   has_many :questions
 
-  validates :last_name, :first_name, :user_name, :email, presence: true
+  validates :last_name, :first_name, :username, :email, presence: true
 
   def password
     @password ||= Password.new(password_hash) if password_hash.present?
