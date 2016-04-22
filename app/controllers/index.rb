@@ -40,7 +40,7 @@ end
 post '/posts' do
 	if request.xhr?
 		user_id = session[:user_id]
-		
+
 		puts params[:title]
 		puts params[:content]
 		puts user_id
@@ -55,8 +55,28 @@ post '/posts' do
 	end
 end
 
+get '/posts/:id' do
+  @post = Question.find(params[:id])
+  erb :post
+end
 
+post '/posts/upvote' do
+  if request.xhr?
+    @post = Question.find(params[:id])
+    @post.votes << Vote.create(value: 1)
+    content_type :json
+    {points: @post.points}.to_json
+  end
+end
 
+post '/posts/downvote' do
+  if request.xhr?
+    @post = Question.find(params[:id])
+    @post.votes[-1].delete
+    content_type :json
+    {points: @post.points}.to_json
+  end
+end
 # post '/posts/:id/vote' do
 #   if request.xhr?
 #     post = Post.find(params[:id])

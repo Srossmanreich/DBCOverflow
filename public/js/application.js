@@ -1,5 +1,9 @@
 $(document).ready(function() {
+  $('#comment-form').hide();
+
   $('.modal-trigger').leanModal();
+
+
 
   $('img').mouseover(function(){
     $('img').addClass("circle-highlight")
@@ -31,7 +35,7 @@ $(document).ready(function() {
 
     request.done(function(data) {
       console.log(data);
-      $('.question-list').append(data); 
+      $('.question-list').append(data);
       $('#modal3').closeModal();
     })
 
@@ -41,6 +45,55 @@ $(document).ready(function() {
  })
 
 
+  $('.upvote').click(function(e){
+    e.preventDefault();
+    var input = {id: $('.identifier').attr('id')};
+    console.log(input)
+
+    $.ajax({
+      type: 'post',
+      url: '/posts/upvote',
+      data: input
+    })
+    .done(function(data){
+      $('#points').text(data.points)
+    })
+  })
+
+  $('.downvote').click(function(e){
+    e.preventDefault();
+    var input = {id: $('.identifier').attr('id')};
+    console.log(input)
+
+    $.ajax({
+      type: 'post',
+      url: '/posts/downvote',
+      data: input
+    })
+    .done(function(data){
+      $('#points').text(data.points)
+    })
+  })
+
+  $('.commenting').click(function(e){
+    e.preventDefault();
+    $('#comment-form').fadeIn(function(){})
+  })
+
+  $('.dope').click(function(e){
+    e.preventDefault();
+    var input = {content: $('.comment-form').attr('id')};
+    console.log(input)
+
+    $.ajax({
+      type: 'post',
+      url: '/posts/upvote',
+      data: input
+    })
+    .done(function(data){
+      $('#points').text(data.points)
+    })
+  })
 });
 
 
