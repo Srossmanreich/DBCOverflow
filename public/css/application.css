@@ -153,3 +153,7 @@ float: right ;
   top: 20%;
   left: 0%;
 }
+
+.navbar-fixed {
+  left: -21.5%;
+}

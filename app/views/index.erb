@@ -1,4 +1,4 @@
-
+<div class="container">
 <div class="navbar-fixed">
    <nav>
      <div class="nav-wrapper deep-orange accent-2">
@@ -20,7 +20,7 @@
 
 <div id="modal3" class="modal modal-fixed-footer">
   <div class="modal-content" id="new-ask-form-container">
-    <h4>Sign Up!</h4>
+    <h4>Ask your question!</h4>
     <div class="row">
       <form method="POST" action="/posts" class="col s12" id="ask-question-form">
         <div class="row">
@@ -29,8 +29,8 @@
             <label for="title">Title</label>
           </div>
           <div class="input-field col s12">
-            <input length="400" id="Content" type="text" class="validate" name="Content" required>
-            <label for="Content">Content</label>
+            <input length="400" id="content" type="text" class="validate" name="content" required>
+            <label for="content">Content</label>
           </div>
         </div>
       </div>
@@ -52,4 +52,5 @@
     <a href="/posts/<%= question.id %>" class="collection-item"><%= question.title %></a>
   </div>
   <% end %>
+</div>
 </div>

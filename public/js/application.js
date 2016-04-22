@@ -23,17 +23,20 @@ $(document).ready(function() {
 
     var input = $('#ask-question-form').serialize();
 
-    $.ajax({
+    var request = $.ajax({
       method: "POST",
       url: "/posts",
       data: input
     })
-   .done(function(data) {
-    $('#question-list').append(data);
-     .fail(function(data){
-      alert("Please enter valid question.");
-     });
 
+    request.done(function(data) {
+      console.log(data);
+      $('#question-list').append(data); 
+    })
+
+    request.fail(function(data){
+      alert("Please enter valid question.");
+    })
  })
 
 
