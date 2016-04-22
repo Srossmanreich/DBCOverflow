@@ -18,6 +18,12 @@ background-size: 100% 800px;
     </div>
   </nav>
 
+<div class="center-align btn">
+<% if @check %>
+  <%= @check %>
+<% end %>
+</div>
+
 <img class="center-align" src="images/scumtastic.png" height="400" width="800"/>
 <!-- Modal Trigger -->
 <a id="left" class="modal-trigger waves-effect waves-light btn deep-orange accent-3" href="#modal1"><i class="material-icons left">note_add</i>Sign Up</a>
