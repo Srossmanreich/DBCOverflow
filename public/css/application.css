@@ -148,6 +148,7 @@ float: right ;
   left: 50%;
 }
 
+
 .ask-btn {
   position: absolute;
   top: 20%;
@@ -156,6 +157,28 @@ float: right ;
 
 .navbar-fixed {
   left: -21.5%;
+}
+
+
+#post-title {
+  text-align: center;
+  margin-left: 200px;
+  margin-right: -480px;
+}
+
+#comment-form {
+  margin-left: 340px;
+  margin-right: -350px;
+  display: none;
+}
+
+.circle-highlight {
+  -webkit-transition: box-shadow 400ms; /* Chrome    */
+    transition: box-shadow 2400ms;
+    border-radius: 200px;
+    box-shadow:
+    0 0 0 1px rgba(0,0,0, 0.1),
+    0 0 0 200px white;
 }
 
 .sbpete {
@@ -178,4 +201,3 @@ float: right ;
 .collection{
   clear: right;
 }
-
