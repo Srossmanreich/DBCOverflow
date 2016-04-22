@@ -1,5 +1,21 @@
 $(document).ready(function() {
   $('.modal-trigger').leanModal();
+
+  $('img').mouseover(function(){
+    $('img').addClass("circle-highlight")
+  });
+
+  $('.hover').mouseover(function(){
+    $('img').addClass("circle-highlight")
+  });
+
+  $('img').mouseout(function(){
+    $('img').removeClass("circle-highlight")
+  });
+
+  $('.hover').mouseout(function(){
+    $('img').removeClass("circle-highlight")
+  });
 });
 // From HackerNews
 // $(document).ready(function() {

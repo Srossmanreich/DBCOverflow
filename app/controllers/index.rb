@@ -12,6 +12,8 @@ post '/create' do
   if user.save
   	session[:user_id] = user.id
     redirect "/"
+   else
+   	redirect "/"
   end
 end
 
@@ -33,6 +35,10 @@ end
 get '/posts' do
   @questions = Question.all
   erb :index
+end
+
+get '/posts/:id' do 
+
 end
 
 
