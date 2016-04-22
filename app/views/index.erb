@@ -12,6 +12,12 @@
 
 
 <% @questions.each do |question| %>
+<div class="collection deep-orange accent-3">
+  <a href="'/questions/<%= question.id %>'" class="collection-item"><%= question.title %></a>
+</div>
+<% end %>
+
+<!-- <% @questions.each do |question| %>
   <div class='question-container'>
     <article id="<%= question.id %>">
       <form method="question" action='/questions/<%= question.id %>/vote' class="inline">
@@ -24,7 +30,7 @@
       </p>
     </article>
   </div>
-<% end %>
+<% end %> -->
 
 <form id="questions" method="question" action="/questions">
   <input type="text" name="title" placeholder="title">
