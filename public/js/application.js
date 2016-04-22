@@ -17,9 +17,26 @@ $(document).ready(function() {
     $('img').removeClass("circle-highlight")
   });
 
-  
+//Add new question to the page
+  $('.container').on('submit','#new-ask-form-container',function(e){
+    e.preventDefault();
 
-  
+    var input = $('#ask-question-form').serialize();
+
+    $.ajax({
+      method: "POST",
+      url: "/posts",
+      data: input
+    })
+   .done(function(data) {
+    $('#question-list').append(data);
+     .fail(function(data){
+      alert("Please enter valid question.");
+     });
+
+ })
+
+
 });
 
 

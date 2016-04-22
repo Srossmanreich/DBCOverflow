@@ -37,9 +37,17 @@ get '/posts' do
   erb :index
 end
 
-post '/ask' do
-	user_id = session[:user_id]
-	question = Question.create(title: params[:title], content: params[:content], user_id: user_id)
+post '/posts' do
+	if request.xhr?
+		user_id = session[:user_id]
+		question = Question.new(title: params[:title], content: params[:content], user_id: user_id)
+		if question.save
+	      status 200
+	      erb :'_postlist', layout: false, locals: {question: question}
+	    else
+	      status 422
+	    end
+	end
 end
 
 
