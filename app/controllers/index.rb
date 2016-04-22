@@ -34,6 +34,11 @@ end
 
 get '/posts' do
   @questions = Question.all
+	  if session[:user_id]
+	  	@id = "/#{session[:user_id]}"
+	  else
+	  	@id = ""
+	  end
   erb :index
 end
 
@@ -53,6 +58,12 @@ post '/posts' do
 	      status 422
 	    end
 	end
+end
+
+get '/user/:id' do
+	@user = User.find(params[:id])
+	@questions = @user.questions
+	erb :profile
 end
 
 
