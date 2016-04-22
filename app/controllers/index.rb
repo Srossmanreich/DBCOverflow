@@ -1,7 +1,27 @@
 get '/' do
+	if session[:user_id]
+		redirect "/posts"
+	else
+		erb :landing
+	end
+end
+
+post '/login' do
+	user = User.find_by(user_name: params[:user_name])
+	if user && user.password == params[:password]
+    	session[:user_id] = user.id
+		redirect "/posts"
+	else
+		#error?
+	end
+end
+
+get '/posts' do
   @questions = Question.all
   erb :index
 end
+
+
 
 # get '/posts' do
 #   @posts = Post.all
