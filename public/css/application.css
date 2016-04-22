@@ -7,8 +7,12 @@ body {
 }
 
 header {
+  position: relative;
+  width: 100%;
+  left: 50%;
   background-color: #F4712D;
   padding: 5px 5px;
+  border: 2px solid black;
 }
 
 header h1 {
@@ -154,4 +158,12 @@ float: right ;
 
 .center-align {
   margin-left: 38%;
+}
+
+.question-container {
+  position: relative;
+  border: 2px solid black;
+  left: 50%;
+  margin: 5%;
+  box-shadow: 10px 10px 5px #888888;
 }

@@ -8,10 +8,8 @@
   </p>
 </header>
 
-
-<div class='question-container'>
-  <% @questions.each do |question| %>
-
+<% @questions.each do |question| %>
+  <div class='question-container'>
     <article id="<%= question.id %>">
       <form method="question" action='/questions/<%= question.id %>/vote' class="inline">
         <button type="submit" name="submit_param" value="submit_value" class="fa fa-sort-desc vote-button upvote-button"></button>
@@ -22,9 +20,8 @@
         <a class="delete" href='/questions/<%= question.id %>'></a>
       </p>
     </article>
-
-  <% end %>
-</div>
+  </div>
+<% end %>
 
 <form id="questions" method="question" action="/questions">
   <input type="text" name="title" placeholder="title">
