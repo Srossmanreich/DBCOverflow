@@ -6,35 +6,6 @@ body {
   margin: 0 auto;
 }
 
-/*header {
-  position: relative;
-  width: 100%;
-  left: 50%;
-  background-color: #F4712D;
-  padding: 5px 5px;
-  border: 2px solid black;
-}
-
-header h1 {
-  font-size: 11pt;
-  display: inline;
-}
-
-header p {
-  margin-left: 5px ;
-  font-size: 10pt;
-  display: inline;
-}
-
-header p a {
-  color: black;
-  text-decoration: none;
-}
-
-header p a:nth-child(n + 2):before {
-  content: " | ";
-}*/
-
 article {
   margin: 5px 5px;
 }
@@ -160,7 +131,6 @@ float: right ;
   margin-left: 38%;
 }
 
-<<<<<<< HEAD
 .question-container {
   position: relative;
   border: 2px solid black;
@@ -176,4 +146,10 @@ float: right ;
 .collection {
   position: relative;
   left: 50%;
+}
+
+.ask-btn {
+  position: absolute;
+  top: 20%;
+  left: 0%;
 }
