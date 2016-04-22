@@ -1,5 +1,5 @@
 get '/' do
-  redirect '/posts'
+  erb :landing
 end
 
 get '/posts' do
