@@ -9,7 +9,8 @@ class User < ActiveRecord::Base
   has_many :questions
   has_many :votes
 
-  validates :last_name, :first_name, :username, :email, presence: true
+  validates :last_name, :first_name, presence: true
+  validates :username, :email, presence: true, uniqueness: true
 
   def password
     @password ||= Password.new(password_hash) if password_hash.present?
