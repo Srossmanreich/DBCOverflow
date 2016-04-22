@@ -160,7 +160,6 @@ float: right ;
   margin-left: 38%;
 }
 
-<<<<<<< HEAD
 .question-container {
   position: relative;
   border: 2px solid black;
@@ -176,4 +175,8 @@ float: right ;
 .collection {
   position: relative;
   left: 50%;
+}
+
+.hover {
+
 }
