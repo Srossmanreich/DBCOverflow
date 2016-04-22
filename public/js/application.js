@@ -32,6 +32,7 @@ $(document).ready(function() {
     request.done(function(data) {
       console.log(data);
       $('#question-list').append(data); 
+      $('#modal3').closeModal();
     })
 
     request.fail(function(data){
