@@ -43,11 +43,6 @@ end
 
 
 
-# get '/posts' do
-#   @posts = Post.all
-#   erb :index
-# end
-
 # post '/posts/:id/vote' do
 #   if request.xhr?
 #     post = Post.find(params[:id])
