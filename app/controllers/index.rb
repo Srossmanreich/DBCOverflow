@@ -45,11 +45,6 @@ end
 post '/posts' do
 	if request.xhr?
 		user_id = session[:user_id]
-		
-		puts params[:title]
-		puts params[:content]
-		puts user_id
-
 		question = Question.new(title: params[:title],content: params[:content], user_id: user_id)
 		if question.save
 	      status 200
