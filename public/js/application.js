@@ -16,7 +16,36 @@ $(document).ready(function() {
   $('.hover').mouseout(function(){
     $('img').removeClass("circle-highlight")
   });
+
+//Add new question to the page
+  $('.container').on('submit','#new-ask-form-container',function(e){
+    e.preventDefault();
+
+    var input = $('#ask-question-form').serialize();
+
+    var request = $.ajax({
+      method: "POST",
+      url: "/posts",
+      data: input
+    })
+
+    request.done(function(data) {
+      console.log(data);
+      $('.question-list').append(data); 
+      $('#modal3').closeModal();
+    })
+
+    request.fail(function(data){
+      alert("Please enter valid question.");
+    })
+ })
+
+
 });
+
+
+
+
 // From HackerNews
 // $(document).ready(function() {
 
