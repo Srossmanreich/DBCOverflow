@@ -60,6 +60,7 @@ end
 
 get '/posts/:id' do
   @post = Question.find(params[:id])
+  @id = "/#{session[:user_id]}"
   erb :post
 end
 
