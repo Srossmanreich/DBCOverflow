@@ -34,6 +34,11 @@ end
 
 get '/posts' do
   @questions = Question.all
+	  if session[:user_id]
+	  	@id = "/#{session[:user_id]}"
+	  else
+	  	@id = ""
+	  end
   erb :index
 end
 
@@ -41,9 +46,6 @@ post '/posts' do
 	if request.xhr?
 		user_id = session[:user_id]
 
-		puts params[:title]
-		puts params[:content]
-		puts user_id
 
 		question = Question.new(title: params[:title],content: params[:content], user_id: user_id)
 		if question.save
@@ -55,10 +57,18 @@ post '/posts' do
 	end
 end
 
+
 get '/posts/:id' do
   @post = Question.find(params[:id])
   erb :post
 end
+
+get '/user/:id' do
+	@user = User.find(params[:id])
+	@questions = @user.questions
+	erb :profile
+end
+
 
 post '/posts/upvote' do
   if request.xhr?
