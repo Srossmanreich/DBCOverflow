@@ -6,11 +6,6 @@ get '/' do
 	end
 end
 
-get '/error' do
-	@check = "Please try a different username, the one you've chosen has already been taken"
-	erb :landing
-end
-
 post '/create' do
   user = User.new(first_name: params[:first_name], last_name: params[:last_name], username: params[:username], email: params[:email], password: params[:password])
   user.save
@@ -18,7 +13,7 @@ post '/create' do
   	session[:user_id] = user.id
     redirect "/"
    else
-   	redirect "/error"
+   	redirect "/"
   end
 end
 
