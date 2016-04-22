@@ -1,4 +1,6 @@
-
+$(document).ready(function() {
+  $('.modal-trigger').leanModal();
+});
 // From HackerNews
 // $(document).ready(function() {
 
