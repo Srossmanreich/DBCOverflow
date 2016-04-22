@@ -6,7 +6,7 @@ body {
   margin: 0 auto;
 }
 
-header {
+/*header {
   position: relative;
   width: 100%;
   left: 50%;
@@ -33,7 +33,7 @@ header p a {
 
 header p a:nth-child(n + 2):before {
   content: " | ";
-}
+}*/
 
 article {
   margin: 5px 5px;
