@@ -16,7 +16,15 @@ $(document).ready(function() {
   $('.hover').mouseout(function(){
     $('img').removeClass("circle-highlight")
   });
+
+  
+
+  
 });
+
+
+
+
 // From HackerNews
 // $(document).ready(function() {
 

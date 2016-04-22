@@ -9,12 +9,46 @@
    </nav>
  </div>
 
+<!-- Modal trigger  -->
+
 <div class="ask-btn">
-  <a class="modal-trigger waves-effect waves-light btn deep-orange accent-2 hover" href="#modal1"><i class="material-icons left">note_add</i>Ask a question</a>
+  <a class="modal-trigger waves-effect waves-light btn deep-orange accent-2 hover" href="#modal3"><i class="material-icons left">note_add</i>Ask a question</a>
 </div>
 
-<% @questions.each do |question| %>
-<div class="collection deep-orange accent-3">
-  <a href="/posts/<%= question.id %>" class="collection-item"><%= question.title %></a>
+<!-- Modal form -->
+
+<div id="modal3" class="modal modal-fixed-footer">
+  <div class="modal-content">
+    <h4>Sign Up!</h4>
+    <div class="row">
+      <form method="POST" action="/ask" class="col s12">
+        <div class="row">
+          <div class="input-field col s6">
+            <input length="40" id="title" type="text" class="validate" name="title" required>
+            <label for="title">Title</label>
+          </div>
+          <div class="input-field col s12">
+            <input length="400" id="Content" type="text" class="validate" name="Content" required>
+            <label for="Content">Content</label>
+          </div>
+        </div>
+      </div>
+    </div>
+
+        <div class="modal-footer">
+          <button class="btn waves-effect waves-light deep-orange" type="submit" name="action">Submit
+            <i class="material-icons right"></i>
+          </button>
+        </div>
+      </form>
+  </div>
 </div>
-<% end %>
+</div>
+
+<div class="container">
+  <% @questions.each do |question| %>
+  <div class="collection deep-orange accent-3">
+    <a href="/posts/<%= question.id %>" class="collection-item"><%= question.title %></a>
+  </div>
+  <% end %>
+</div>

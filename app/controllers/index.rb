@@ -37,8 +37,9 @@ get '/posts' do
   erb :index
 end
 
-get '/posts/:id' do 
-
+post '/ask' do
+	user_id = session[:user_id]
+	question = Question.create(title: params[:title], content: params[:content], user_id: user_id)
 end
 
 
