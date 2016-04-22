@@ -155,3 +155,11 @@ float: right ;
 .center-align {
   margin-left: 38%;
 }
+
+.circle-highlight {
+    -webkit-transition: box-shadow 2000ms; /* Chrome    */
+    border-radius: 500px;
+    box-shadow:
+        0 0 0  1px rgba(  0,  0,  0, 0.1),
+        0 0 0 500px rgba(188,190,192, 0.3);
+}
