@@ -14,15 +14,10 @@ GEM
       minitest (~> 5.1)
       thread_safe (~> 0.3, >= 0.3.4)
       tzinfo (~> 1.1)
-<<<<<<< HEAD
     addressable (2.4.0)
-    arel (6.0.3)
-    backports (3.6.8)
-=======
     arel (6.0.0)
     backports (3.6.4)
     bcrypt (3.1.11)
->>>>>>> 8d7c083d5379d35051e30d6848e08054aca55958
     builder (3.2.2)
     capybara (2.7.0)
       addressable

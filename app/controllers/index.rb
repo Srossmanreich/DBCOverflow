@@ -6,6 +6,15 @@ get '/' do
 	end
 end
 
+post '/create' do
+  user = User.new(first_name: params[:first_name], last_name: params[:last_name], username: params[:username], email: params[:email], password: params[:password])
+  user.save
+  if user.save
+  	session[:user_id] = user.id
+    redirect "/"
+  end
+end
+
 post '/login' do
 	user = User.find_by(user_name: params[:user_name])
 	if user && user.password == params[:password]
