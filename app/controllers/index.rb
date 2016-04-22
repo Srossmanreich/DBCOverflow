@@ -23,7 +23,7 @@ post '/login' do
     	session[:user_id] = user.id
 		redirect "/posts"
 	else
-		#error?
+		redirect "/"
 	end
 end
 
