@@ -1,17 +1,24 @@
-<header>
-  <h1>DBC Overflow</h1>
-  <p class="links">
-    <a id="new" href="/new">new</a>
-    <a id="comments" href="/comments">comments</a>
-    <a id="popular" href="/popular">popular</a>
-    <a href="#">login</a>
-  </p>
-</header>
+<div class="navbar-fixed">
+   <nav>
+     <div class="nav-wrapper">
+       <a href="#!" class="brand-logo">DBC Overflow</a>
+       <ul class="right hide-on-med-and-down">
+         <li><a href="sass.html">Sass</a></li>
+         <li><a href="badges.html">Components</a></li>
+       </ul>
+     </div>
+   </nav>
+ </div>
 
 
-<div class='question-container'>
-  <% @questions.each do |question| %>
+<% @questions.each do |question| %>
+<div class="collection deep-orange accent-3">
+  <a href="'/questions/<%= question.id %>'" class="collection-item"><%= question.title %></a>
+</div>
+<% end %>
 
+<!-- <% @questions.each do |question| %>
+  <div class='question-container'>
     <article id="<%= question.id %>">
       <form method="question" action='/questions/<%= question.id %>/vote' class="inline">
         <button type="submit" name="submit_param" value="submit_value" class="fa fa-sort-desc vote-button upvote-button"></button>
@@ -22,9 +29,8 @@
         <a class="delete" href='/questions/<%= question.id %>'></a>
       </p>
     </article>
-
-  <% end %>
-</div>
+  </div>
+<% end %> -->
 
 <form id="questions" method="question" action="/questions">
   <input type="text" name="title" placeholder="title">

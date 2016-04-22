@@ -6,9 +6,13 @@ body {
   margin: 0 auto;
 }
 
-header {
+/*header {
+  position: relative;
+  width: 100%;
+  left: 50%;
   background-color: #F4712D;
   padding: 5px 5px;
+  border: 2px solid black;
 }
 
 header h1 {
@@ -29,7 +33,7 @@ header p a {
 
 header p a:nth-child(n + 2):before {
   content: " | ";
-}
+}*/
 
 article {
   margin: 5px 5px;
@@ -156,10 +160,20 @@ float: right ;
   margin-left: 38%;
 }
 
-.circle-highlight {
-    -webkit-transition: box-shadow 2000ms; /* Chrome    */
-    border-radius: 500px;
-    box-shadow:
-        0 0 0  1px rgba(  0,  0,  0, 0.1),
-        0 0 0 500px rgba(188,190,192, 0.3);
+<<<<<<< HEAD
+.question-container {
+  position: relative;
+  border: 2px solid black;
+  left: 50%;
+  margin: 5%;
+  box-shadow: 10px 10px 5px #888888;
+}
+
+.navbar-fixed {
+  margin-bottom: 50px;
+}
+
+.collection {
+  position: relative;
+  left: 50%;
 }
